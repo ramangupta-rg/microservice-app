@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REPO = 'microservice-app'
-        IMAGE = "mydockerhubuser/${REPO}"
+        IMAGE = "ramangupta21/${REPO}"
         KUBE_CONFIG_PATH = "/root/.kube/config"
     }
 
@@ -28,7 +28,7 @@ pipeline {
             }
         }
 
-        stage('Push to Docker Hub') {
+        stage('Push Docker Image') {
             steps {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
